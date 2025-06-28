@@ -20,9 +20,11 @@
   "homepage": "https://github.com/AntonioALino/MoodDy#readme",
   "devDependencies": {
     "@types/express": "^5.0.3",
+    "prisma": "^6.10.1",
     "typescript": "^5.8.3"
   },
   "dependencies": {
+    "@prisma/client": "^6.10.1",
     "dotenv": "^17.0.0",
     "express": "^5.1.0"
   }
