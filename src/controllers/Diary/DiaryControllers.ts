@@ -1,11 +1,12 @@
 import { Request, Response } from "express";
 import { createDiaryService, getAllDiariesByUserIdService, getDiaryByIdService } from "../../services/Diary/DiaryService";
+import { analyzeSentimentAndSuggestActivities } from "../../utils/gemini";
 
 export const createDiaryController = async (req: Request, res: Response) : Promise<any> => {
-    const { userId, text } = req.body;
+    const { userId, text, userProvidedMood } = req.body;
 
     try {
-        const diaryEntry = await createDiaryService(userId, text);
+        const diaryEntry = await createDiaryService(userId, text, userProvidedMood);
         return res.status(201).json(diaryEntry);
     } catch (error) {
         return res.status(500).json({ error: "Internal Server Error" });
