@@ -18,14 +18,7 @@ Desenvolvido com um backend robusto em **Node.js, Express e TypeScript**, e util
 ### 🤖 Inteligência Artificial com Google Gemini
 - **Análise de Sentimentos em Português:** O Gemini detecta a emoção predominante com nuance e precisão.
 - **Sugestões Personalizadas:** Baseado na emoção detectada e preferências do usuário, a IA sugere 3 atividades fora do ambiente digital (com contexto local de **Sorocaba, SP, Brasil**).
-
-### 🧠 Personalização por Preferências do Usuário
-- **GET /profile/preferences:** Recupera as categorias de interesse.
-- **PUT /profile/preferences:** Define categorias como "natureza", "leitura", "cozinhar", etc.
-
-### 📊 Dashboard de Humor
-- **GET /dashboard/mood-trends:** Tendências de humor por data, emoção mais comum e pontuação média.
-
+  
 ---
 
 ## 🛠️ Tecnologias Utilizadas
