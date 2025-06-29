@@ -1,0 +1,39 @@
+{
+  "name": "mooddy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev --ignore-watch node_modules --respawn --exit-child --no-notify src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AntonioALino/MoodDy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/AntonioALino/MoodDy/issues"
+  },
+  "homepage": "https://github.com/AntonioALino/MoodDy#readme",
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/natural": "^5.1.5",
+    "prisma": "^6.10.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@prisma/client": "^6.10.1",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.0.0",
+    "express": "^5.1.0",
+    "natural": "^8.1.0"
+  }
+}

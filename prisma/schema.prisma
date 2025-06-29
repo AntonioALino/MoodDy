@@ -1,0 +1,46 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid()) 
+  email     String   @unique 
+  password  String  
+  name      String?  
+  createdAt DateTime @default(now()) 
+  updatedAt DateTime @updatedAt 
+
+  diaries DiaryEntry[] 
+}
+
+
+model DiaryEntry {
+  id                    String   @id @default(uuid())
+  userId                String  
+  user                  User     @relation(fields: [userId], references: [id])
+  text                  String   @db.Text 
+  userProvidedMood      String?  
+  entryDate             DateTime @default(now())
+
+  // Análise de Sentimento pela IA (do seu backend, ex: usando 'natural' ou outro modelo local)
+  aiInferredEmotion     String?  // A emoção/sentimento inferido pela sua IA (ex: "positivo", "negativo", "neutro")
+  sentimentScore        Float?   // Pontuação numérica do sentimento (ex: de -1 a 1)
+
+  // Sugestões de Atividades geradas pela IA (ex: Gemini/GPT)
+  suggestedActivities   String[] // Um array de strings com as sugestões de atividades (ex: ["Caminhar no parque", "Ler um livro"])
+
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+}
